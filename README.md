@@ -2,7 +2,7 @@
 
 ## Description
 
-The provided code snippet represents a parallelized implementation of the **[Marching Squares](https://www.baeldung.com/cs/marching-squares)** algorithm, applied specifically to topographic maps, using **Pthreads in C**. This method efficiently divides the workload among multiple threads to generate topographic map contours from an input image.
+This `C` projects presents a parallelized implementation of the **[Marching Squares](https://www.baeldung.com/cs/marching-squares)** algorithm, applied specifically to topographic maps, using **Pthreads in C**. This method efficiently divides the workload among multiple threads to generate topographic map contours from an input image.
 
 <div align="center">
   <img src="./images/topography_initial.png" alt="SAMPLE_GRID" width="49%"/>
@@ -47,7 +47,7 @@ For each cell in the binary grid, the algorithm examines the corners to identify
 
 ## Workload Distribution
 
-- **Rescaling:** each thread works on a different part of the image, using *bicubic interpolation* to maintain the same quality of the scaled image like the original image.
+- **Rescaling:** each thread works on a different part of the image, using *bicubic interpolation* to maintain the same quality like the original image.
 - **Sampling Grid:** each thread computes the binary value for the corners of its assigned squares, based on a **sigma threshold**; parallel processing of this step means multiple grid squares are evaluated simultaneously.
 - **Contour Mapping:** lookup table with **16** possible patterns is used, corresponding to the **16** possible states of a **2x2** cell in the grid; threads compute the contour map and retrieve the corresponding contour image, which is then drawn onto the output image.
 - **Marching Squares:** once threads have the appropriate contour segment images, they 'march' through the grid, cell by cell, in a linear fashion to draw continuous contour lines.
