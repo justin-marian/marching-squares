@@ -2,7 +2,7 @@
 
 ## Description
 
-This `C` projects presents a parallelized implementation of the **[Marching Squares](https://www.baeldung.com/cs/marching-squares)** algorithm, applied specifically to topographic maps, using **Pthreads in C**. This method efficiently divides the workload among multiple threads to generate topographic map contours from an input image.
+This `C` projects presents a parallelized implementation of the **[Marching Squares](https://www.baeldung.com/cs/marching-squares)** algorithm, applied specifically to topographic maps, using **Pthreads**. This method efficiently divides the workload among multiple threads to generate topographic map contours from an input image.
 
 <div align="center">
   <img src="./images/topography_initial.png" alt="SAMPLE_GRID" width="49%"/>
